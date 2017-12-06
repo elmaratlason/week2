@@ -1,16 +1,14 @@
 node {
     checkout scm
+
     stage('Build') {
         echo 'Building in stage BUILD..'
-        npm run startpostgres
-        npm install
-        npm run startserver
+        sh 'npm install'
     }
     stage('Test') {
         echo 'Testing..'
-        npm run test
-        npm run start
-        npm run apitest
+        sh 'npm run test'
+
     }
     stage('Deploy') {
         echo 'Deploying....'

@@ -19,6 +19,22 @@ sudo usermod -a -G docker jenkins
 
 sudo service jenkins start
 
+# install git client
 sudo yum install git
+
+# not used, instead use oneliner below 
+# curl --silent --location https://rpm.nodesource.com/setup_8.x | sudo bash -
+# sudo yum -y install node
+
+# install nodejs and jpm
+sudo yum install nodejs npm --enablerepo=epel
+
+# install nvm
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
+
+# install correct version of nvm
+nvm install 6.9.1
+
+
 
 touch ec2-init-done.markerfile
