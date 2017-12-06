@@ -3,6 +3,7 @@ node {
 
     stage('Build') {
         echo 'Building in stage BUILD..'
+        echo 'run npm install..'
         sh 'npm install'
     }
     stage('Test') {
