@@ -10,7 +10,7 @@ node {
     }
     stage('Project Build') {
         echo 'Building Project'
-        sh 'npm install'
+        sh 'npm install npm@latest -g'
         sh 'npm run-script build'
     }
 }
