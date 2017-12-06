@@ -8,7 +8,8 @@ node {
         echo 'Testing..'
         sh 'npm run test'
     }
-    stage('Deploy') {
-        echo 'Deploying....'
+    stage('Project Build') {
+        echo 'Building Project'
+        sh 'npm run-script build'
     }
 }
