@@ -54,7 +54,7 @@ fi
 
 MY_CIDR=${MY_PUBLIC_IP}/32
 SCHOOL_CIDR=130.208.240.8/32
-HOME_CIDR=157.157.208.120
+HOME_CIDR=157.157.208.120/32
 echo Using CIDR ${MY_CIDR} for access restrictions.
 
 set +e
