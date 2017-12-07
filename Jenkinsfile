@@ -1,6 +1,7 @@
 node {
     checkout scm
         stage('execute shell'){
+        sh 'mkdir .docker || echo ".docker directory exists"<<'
         sh 'cp ~/.docker/config.json ~/.docker/config.`date +%Y-%m-%d-%H-%M-%S`.json || echo "no config file to backup"'
         sh 'cat ~/.docker/config.json # before'
         sh 'docker login --username=elmarjenkinsworker --password=elmarjenkinsworker hub.docker.net'
