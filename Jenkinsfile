@@ -30,5 +30,6 @@ node {
     }
     stage('Deploy to AWS'){
         echo 'deploy to aws'
+        sh './provision-new-environment.sh'
     }
 }
