@@ -1,5 +1,9 @@
 #!/bin/bash
 
+DOCKER_IMAGE="tictactoe"
+DOCKER_REPO="elmaratlason"
+
+
 echo Cleaning...
 rm -rf ./dist
 
@@ -46,7 +50,7 @@ cd build
 
 echo Building docker image
 
-docker build -t gulli/tictactoe:$GIT_COMMIT .
+docker build -t $DOCKER_REPO/$DOCKER_IMAGE:$GIT_COMMIT .
 
 rc=$?
 if [[ $rc != 0 ]] ; then
@@ -54,7 +58,7 @@ if [[ $rc != 0 ]] ; then
     exit $rc
 fi
 
-docker push gulli/tictactoe:$GIT_COMMIT
+docker push $DOCKER_REPO/$DOCKER_IMAGE:$GIT_COMMIT
 rc=$?
 if [[ $rc != 0 ]] ; then
    echo "Docker push failed " $rc
