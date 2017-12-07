@@ -51,6 +51,7 @@ echo Building docker image
 
 docker build -t $DOCKER_REPO/$DOCKER_IMAGE:$GIT_COMMIT .
 
+
 rc=$?
 if [[ $rc != 0 ]] ; then
     echo "Docker build failed " $rc
