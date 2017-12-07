@@ -58,7 +58,6 @@ if [[ $rc != 0 ]] ; then
 fi
 
 docker push $DOCKER_REPO/$DOCKER_IMAGE:$GIT_COMMIT
-docker push $DOCKER_REPO/$DOCKER_IMAGE:latest
 rc=$?
 if [[ $rc != 0 ]] ; then
    echo "Docker push failed " $rc
