@@ -53,10 +53,15 @@ fi
 
 
 MY_CIDR=${MY_PUBLIC_IP}/32
-
+SCHOOL_CIDR=130.208.240.8/32
+HOME_CIDR=157.157.208.120
 echo Using CIDR ${MY_CIDR} for access restrictions.
 
 set +e
 aws ec2 authorize-security-group-ingress --group-name ${SECURITY_GROUP_NAME} --protocol tcp --port 22 --cidr ${MY_CIDR}
 aws ec2 authorize-security-group-ingress --group-name ${SECURITY_GROUP_NAME} --protocol tcp --port 80 --cidr ${MY_CIDR}
+aws ec2 authorize-security-group-ingress --group-name ${SECURITY_GROUP_NAME} --protocol tcp --port 22 --cidr ${SCHOOL_CIDR}
+aws ec2 authorize-security-group-ingress --group-name ${SECURITY_GROUP_NAME} --protocol tcp --port 8080 --cidr ${SCHOOL_CIDR}
+aws ec2 authorize-security-group-ingress --group-name ${SECURITY_GROUP_NAME} --protocol tcp --port 22 --cidr ${HOME_CIDR}
+aws ec2 authorize-security-group-ingress --group-name ${SECURITY_GROUP_NAME} --protocol tcp --port 8080 --cidr ${HOME_CIDR}
 
