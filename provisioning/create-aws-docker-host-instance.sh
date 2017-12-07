@@ -4,8 +4,8 @@ set -e
 echo "Check for instance information..."
 INSTANCE_DIR="ec2_instance"
 
-#export AMI_IMAGE_ID="ami-1a962263"
-export AMI_IMAGE_ID="ami-e7d6c983"
+export AMI_IMAGE_ID="ami-1a962263"
+#export AMI_IMAGE_ID="ami-e7d6c983"
 
 echo No instance information present, continuing.
 [ -d "${INSTANCE_DIR}" ] || mkdir ${INSTANCE_DIR}
