@@ -73,7 +73,7 @@ describe('create game command', function() {
 });
 
 
-fdescribe('join game command', function () {
+describe('join game command', function () {
 
 
     let given, when, then;
@@ -125,7 +125,7 @@ fdescribe('join game command', function () {
 
     });
 
-    xit('should emit FullGameJoinAttempted event when game full', function () {
+    it('should emit FullGameJoinAttempted event when game full', function () {
 
         given = [{
             type: "GameCreated",
@@ -134,6 +134,13 @@ fdescribe('join game command', function () {
             },
             name: "TheFirstGame",
             timeStamp: "2014-12-02T11:29:29",
+        },
+        {   type: "GameJoined",
+            user: {
+                userName: "Gummi"
+            },
+            name: "TheFirstGame",
+            timeStamp: "2014-12-02T11:29:29"
         }
         ];
         when =
@@ -142,28 +149,19 @@ fdescribe('join game command', function () {
                 user: {
                     userName: "Siggi"
                 },
-                type: "JoinGame",
-                user: {
-                    userName: "Gummi2"
-                },
-                type: "JoinGame",
-                user: {
-                    userName: "Gummi3"
-                },
                 name: "TheFirstGame",
-                timeStamp: "2014-12-02T11:29:29"
+                timeStamp: "2014-12-02T11:30:29"
             };
         then = [
             {
                 type: "FullGameJoinAttempted",
                 user: {
-                    userName: "Gummi"
+                    userName: "Siggi"
                 },
                 name: "TheFirstGame",
-                timeStamp: "2014-12-02T11:29:29",
+                timeStamp: "2014-12-02T11:30:29"
            }
         ];
-        //expect(true).toBe(false);
     });
 });
 
