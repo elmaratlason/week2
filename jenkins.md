@@ -1,6 +1,8 @@
 # Week 2
 ## [Jenkins](http://ec2-35-177-96-250.eu-west-2.compute.amazonaws.com:8080)
-## [TheGame](http://ec2-54-76-136-201.eu-west-1.compute.amazonaws.com:8080) -(url constantly changin when new version is deployed)
+## [TheGame](http://ec2-54-76-136-201.eu-west-1.compute.amazonaws.com:8080)
+url can change if new ec2 instance for docker is renewed.
+
 ### Scripts
 * Start by provisioning an ec2 instance.
 run:
@@ -15,16 +17,15 @@ run:
 
   my home address for ssh and 8080
 
-* After ec2 instance is up'n running
-this script is called:
+* After ec2 instance is up'n running bootstrap script is called:
 
   [Bootstrap](bootstrap-jenkins.sh)
 
-This script connects to the new instance and runs another script.
+  Bootstrap connects to the new instance and runs another script.
 
   [EC2 Bootstrap](ec2-bootstrap-jenkins.sh)
 
-This script installs:
+  This script installs:
 * Jenkins
 * java 1.8
 * docker
@@ -34,7 +35,7 @@ This script installs:
 * nodejs
 * npm
 * nvm
-# yarn
+* yarn
 
 ### Manual work
 Inside Jenkins
