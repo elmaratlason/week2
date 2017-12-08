@@ -1,11 +1,11 @@
 # Week 2
-## (Jenkins)[http://ec2-35-177-96-250.eu-west-2.compute.amazonaws.com:8080]
-
+## [Jenkins](http://ec2-35-177-96-250.eu-west-2.compute.amazonaws.com:8080)
+## [TheGame](http://ec2-54-76-136-201.eu-west-1.compute.amazonaws.com:8080) -(url constantly changin when new version is deployed)
 ### Scripts
 * Start by provisioning an ec2 instance.
 run:
 
-  (Provision ec2)[provision_aws.sh]
+  [Provision ec2](provision_aws.sh)
 
   This script creates a new ec2 instance in region eu-west-2 (london)
 
@@ -18,11 +18,11 @@ run:
 * After ec2 instance is up'n running
 this script is called:
 
-  (Bootstrap)[bootstrap-jenkins.sh]
+  [Bootstrap](bootstrap-jenkins.sh)
 
 This script connects to the new instance and runs another script.
 
-  (EC2 Bootstrap)[ec2-bootstrap-jenkins.sh]
+  [EC2 Bootstrap](ec2-bootstrap-jenkins.sh)
 
 This script installs:
 * Jenkins
@@ -57,7 +57,10 @@ That can be done by connecting to Jenkins with ssh (use: ./aws.sh)
 * run: aws configure
 
 ## More
-dockerbuild.sh
+dockerbuild.sh - builds docker image after application is built and pushes it to dockerhub
+docker-compose.yml - add postgres port 5432:5432
+server/database.json - change localhost -> postgres
+
 
 # Author
 [Elmar Atlason](mailto:elmar.atlason@gmail.com)
