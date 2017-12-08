@@ -13,7 +13,9 @@ node {
     }
     stage('Build') {
         echo 'Building in stage BUILD..'
-        sh 'npm install'
+        /*sh 'npm install'
+        run with yarn instead of npm*/
+        sh 'yarn install'	
     }
     stage('Test') {
         echo 'Testing..'

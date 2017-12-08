@@ -35,6 +35,10 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | b
 # install correct version of nvm
 nvm install 6.9.1
 
+# install yarn
+sudo wget https://dl.yarnpkg.com/rpm/yarn.repo -O /etc/yum.repos.d/yarn.repo
+curl --silent --location https://rpm.nodesource.com/setup_6.x | sudo bash -
+sudo yum install yarn
 
 
 touch ec2-init-done.markerfile
