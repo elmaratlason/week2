@@ -1,8 +1,6 @@
 #!/bin/bash
-# 
 # update security settings on jenkins
 # should accept argument for group name ( purpose ) ,like: ./create_ec2_stuff.sh jenkins
-# 
 # elmar.atlason@gmail.com / elmar14@ru.is
 # Háskólinn í Reykjavík - 2017
 

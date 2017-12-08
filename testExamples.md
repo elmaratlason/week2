@@ -1,139 +1,154 @@
 # EVENT SOURCING
 
-
+```
 Given
- [Events]
+  [Events in ARRAY]
 When
- Command
+  Single-Command
 Then
- [Resulting Event(s)]
-
-#1
+  [Resulting Event(s) ARRAY]
+```
+## 1
+```
 Given
- [ GameCreated ]
+  [ GameCreated ]
 When
- Place(0,0,X)
+  Place(0,0,X)
 Then
- [ MovePlaced ]
-
-#2
+  [ MovePlaced ]
+```
+## 2
+```
 Given
- [ GameCreated, Placed(0,0,X) ]
+  [ GameCreated, Placed(0,0,X) ]
 When
- Place(0,0,Y)
+  Place(0,0,Y)
 Then
- [ IllegalMove ]
-
-#3
+  [ IllegalMove ]
+```
+## 3
+```
 Given
- [ GameCreated, Placed(0,0,X) ]
+  [ GameCreated, Placed(0,0,X) ]
 When
- Place(0,0,X)
+  Place(0,0,X)
 Then
- [ NotYourMove ]
-
-#4
+  [ NotYourMove ]
+```
+## 4
+```
 Given
- [ GameCreated, Placed(0,0,X), Placed(0,1,X) ]
+  [ GameCreated, Placed(0,0,X), Placed(0,1,X) ]
 When
- Place(0,2,X)
+  Place(0,2,X)
 Then
- [ X Won ]
-
-#5
+  [ X Won ]
+```
+## 5
+```
 Given
- [ Placed(0,0,X) ]
+  [ Placed(0,0,X) ]
 When
- Place(0,0,Y)  
+  Place(0,0,Y)  
 Then
- [ NotAllowed ]
-
- #6
+  [ NotAllowed ]
+```
+## 6
+```
 Given
- [ GameCreated, GameStarted ]
+  [ GameCreated, GameStarted ]
 When
- GameJoine
+  GameJoine
 Then
- [ FullGameJoinAttempted ]
-
- #7
+  [ FullGameJoinAttempted ]
+```
+## 7
+```
 Given
- [ GameCreated ]
+  [ GameCreated ]
 When
- GameJoine
+  GameJoine
 Then
- [ GameJoined ]
-
-#8
+  [ GameJoined ]
+```
+## 8
+```
 Given
- [ X Won ]
+  [ X Won ]
 When
- Place(0,0,Y)
+  Place(0,0,Y)
 Then
- [ NotAllowed ]
-
-#9
+  [ NotAllowed ]
+```
+## 9
+```
 Given
- [ Placed(0,0,X), Placed(1,1,X) ]
+  [ Placed(0,0,X), Placed(1,1,X) ]
 When
- Place(2,2,X)
+  Place(2,2,X)
 Then
- [ GameWon X]
-
-#10
+  [ GameWon X]
+```
+## 10
+```
 Given
- [ Placed(0,0,Y), Placed(1,1,Y) ]
+  [ Placed(0,0,Y), Placed(1,1,Y) ]
 When
- Place(2,2,Y)
+  Place(2,2,Y)
 Then
- [ GameWon Y]
-
- #10
+  [ GameWon Y]
+```
+## 11
+```
 Given
- [ GameCreated ]
+  [ GameCreated ]
 When
- Place(3,0,X)
+  Place(3,0,X)
 Then
- [ NotAllowed ]
-
-#11
+  [ NotAllowed ]
+```
+## 12
+```
 Given
- [ GameCreated, Placed(0,2,X), Placed(1,2,X) ]
+  [ GameCreated, Placed(0,2,X), Placed(1,2,X) ]
 When
- Place(2,2,X)
+  Place(2,2,X)
 Then
- [ GameWon ] 
-    
-#12
+  [ GameWon ]
+```  
+## 13
+```
 Given
- [ GameCreated, 
- Placed(0,0,X), Placed(0,1,Y), Placed(0,2,X), 
- Placed(1,1,Y), Placed(1,0,X), Placed(1,2,Y), 
- Placed(2,1,X), Placed(2,0,Y) 
+  [ GameCreated,
+  Placed(0,0,X), Placed(0,1,Y), Placed(0,2,X),
+  Placed(1,1,Y), Placed(1,0,X), Placed(1,2,Y),
+  Placed(2,1,X), Placed(2,0,Y)
 When
- Place(2,2,X)
+  Place(2,2,X)
 Then
- [ Tie, GameEnded ]
-
-#12
+  [ Tie, GameEnded ]
+```
+## 14
+```
 Given
- [ GameCreated, 
- Placed(0,0,X), Placed(0,1,Y), Placed(0,2,X), 
- Placed(1,0,Y), Placed(1,1,X), Placed(1,2,Y), 
- Placed(2,1,X), Placed(2,0,Y) 
+  [ GameCreated,
+  Placed(0,0,X), Placed(0,1,Y), Placed(0,2,X),
+  Placed(1,0,Y), Placed(1,1,X), Placed(1,2,Y),
+  Placed(2,1,X), Placed(2,0,Y)
 When
- Place(2,2,X)
+  Place(2,2,X)
 Then
- [ GameWon ]
-
-#13
+  [ GameWon ]
+```
+## 15
+```
 Given
- []
+  []
 When
- CreateGame
+  CreateGame
 Then
- [ GameCreated ]
-
+  [ GameCreated ]
+```
 
 ## Store events - not state
  - Atburðir sem gerast í kerfinu
@@ -150,7 +165,7 @@ Then
  - einn tictactoe leikur
 - Command handler (sem tekur við command)
  - kann að túlka command, hlaða upp aggregate og setja saman, láta aggregate fá command
-- Event Store 
+- Event Store
  - Geymir eventa sem hafa orðið til í kerfinu
  - gagnagrunnar (postgres)
  - tvær töflur (commands store, event store)

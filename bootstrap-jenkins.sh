@@ -1,13 +1,9 @@
 #!/usr/bin/env bash
-
-#!/bin/bash
 # setup jenkins on ec2 instance
-#
 # elmar.atlason@gmail.com / elmar14@ru.is
 # Háskólinn í Reykjavík
 
 # get the commit id and instance id as command line arguments
-
 INSTANCE_ID=$(cat ec2_instance-jenkins/instance-id.txt)
 
 # check if the instance id is our

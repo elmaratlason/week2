@@ -1,4 +1,7 @@
 #!/bin/bash
+# used to install needed tools on local machine
+# Háskólinn í Reykjavík - 2017
+# elmar.atlason@gmail.com / elmar14@ru.is
 
 sudo npm install -g nodemon
 sudo npm install -g create-react-app

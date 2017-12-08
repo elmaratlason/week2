@@ -1,4 +1,7 @@
 #!/bin/bash
+# used to run npm build and create docker image 
+# Háskólinn í Reykjavík - 2017
+# elmar.atlason@gmail.com / elmar14@ru.is
 
 DOCKER_IMAGE="tictactoe"
 DOCKER_REPO="elmaratlason"
@@ -24,7 +27,6 @@ if [[ $rc != 0 ]] ; then
     echo "Build failed with exit code " $rc
     exit $rc
 fi
-
 
 cat > ./build/githash.txt <<_EOF_
 $GIT_COMMIT
