@@ -32,14 +32,14 @@ run:
 ### Manual work
 Inside Jenkins
 - Create a project (hgop) that pulls tictactoe code from GitHub
--- A hook is configured on github to notify jenkins which then pulls from repo.
--- Generated public/private keys on Jenkins and public key added to github to allow jenkins to connect to repo
+ -- A hook is configured on github to notify jenkins which then pulls from repo.
+ -- Generated public/private keys on Jenkins and public key added to github to allow jenkins to connect to repo
 - Add Plugins:
--- GitHub Authentication
--- GitHub Integratin
--- Gravatar
--- NodeJS
--- Pipeline
+ -- GitHub Authentication
+ -- GitHub Integratin
+ -- Gravatar
+ -- NodeJS
+ -- Pipeline
 
 ### Jenkins credentials for external services (dockerhub / aws)
 
