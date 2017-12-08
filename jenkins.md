@@ -1,4 +1,6 @@
 # Week 2
+[![Build Status](http://ec2-35-177-96-250.eu-west-2.compute.amazonaws.com:8080/job/hgop/badge/icon)](http://ec2-35-177-96-250.eu-west-2.compute.amazonaws.com:8080/job/hgop)
+
 ## [Jenkins](http://ec2-35-177-96-250.eu-west-2.compute.amazonaws.com:8080)
 ## [The Game](http://ec2-54-76-136-201.eu-west-1.compute.amazonaws.com:8080)
 

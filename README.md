@@ -1,4 +1,5 @@
 ## Application for HGOP 2017 Student project
+[![Build Status](http://ec2-35-177-96-250.eu-west-2.compute.amazonaws.com:8080/job/hgop/badge/icon)](http://ec2-35-177-96-250.eu-west-2.compute.amazonaws.com:8080/job/hgop)
 
 Global installation requirements:
 
@@ -6,9 +7,9 @@ Global installation requirements:
 nodejs version 6.9.1
 https://nodejs.org/en/
 
-It is recommended to install nvm (node version manager) to install node and choose which version you use. 
+It is recommended to install nvm (node version manager) to install node and choose which version you use.
 
-optional: yarn for package management (server only). 
+optional: yarn for package management (server only).
 https://yarnpkg.com/
 
 Add ./node_modules/.bin to your path. This enables to you to run locally installed npm commands.
@@ -165,7 +166,7 @@ client, which is generally a hard problem to solve cleanly. Code that is shared
 between client and server is found on the [client](client/src) side. routing-context is a good example,
 since it is used both in the web client, and in the API and load tests.
 
-Note that transaction support, error handling and logging are incomplete, and many other details that would be 
+Note that transaction support, error handling and logging are incomplete, and many other details that would be
 required in production-ready clustered applications are not present.
 
 
