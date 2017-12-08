@@ -15,6 +15,7 @@ fi
 # Remove .git from url in order to get https link to repo (assumes https url for GitHub)
 export GITHUB_URL=$(echo $GIT_URL | rev | cut -c 5- | rev)
 
+# build app
 echo Building app
 npm run build
 
@@ -49,8 +50,8 @@ cd build
 
 echo Building docker image
 
+# build docker image
 docker build -t $DOCKER_REPO/$DOCKER_IMAGE:$GIT_COMMIT .
-
 
 rc=$?
 if [[ $rc != 0 ]] ; then
@@ -58,6 +59,7 @@ if [[ $rc != 0 ]] ; then
     exit $rc
 fi
 
+# push docker image to docker hub, need to have ./docker/config.json on jenkins, created with docker login
 docker push $DOCKER_REPO/$DOCKER_IMAGE:$GIT_COMMIT
 rc=$?
 if [[ $rc != 0 ]] ; then

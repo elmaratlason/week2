@@ -1,44 +1,5 @@
 # EVENT SOURCING
 
-## Store events - not state
- - Atburðir sem gerast í kerfinu
- - Event Concepts
- --- hlutir sem gerast í þátíð
- --- t.d. PlayerPlacedMove, GameCreated, GameJoined
-
- - Triggeruð af Commands
- -- Commands => hlutir sem ég vil að gerist
- -- þ.e. PlaceMove, CreateGame, JoinGame
- -- oftast eitt command á móti hverjum event
-
-
-# server
-tictactoe-game.Spec
-tictactoe-game
-tictactoe-state
-# client
-app.js
-app-test.js
-
-
-- Aggregate (samansafn)
--- einn tictactoe leikur
-- Command handler (sem tekur við command)
--- kann að túlka command, hlaða upp aggregate og setja saman, láta aggregate fá command
-- Event Store 
--- Geymir eventa sem hafa orðið til í kerfinu
--- gagnagrunnar (postgres)
--- tvær töflur (commands store, event store)
-- app context
--- uppúr "domain driven design"
--- hluturinn sem "límir" allt saman
-
-- Projections
--- ef event fjöldinn hefur efri mörk þarf ekki
--- til að gera event hröð
-
-
-Event Sourcing
 
 Given
  [Events]
@@ -55,7 +16,7 @@ When
 Then
  [ MovePlaced ]
 
-#1.1
+#2
 Given
  [ GameCreated, Placed(0,0,X) ]
 When
@@ -63,7 +24,7 @@ When
 Then
  [ IllegalMove ]
 
-#1.2
+#3
 Given
  [ GameCreated, Placed(0,0,X) ]
 When
@@ -71,7 +32,7 @@ When
 Then
  [ NotYourMove ]
 
-#1.3
+#4
 Given
  [ GameCreated, Placed(0,0,X), Placed(0,1,X) ]
 When
@@ -79,7 +40,7 @@ When
 Then
  [ X Won ]
 
-#2
+#5
 Given
  [ Placed(0,0,X) ]
 When
@@ -87,7 +48,7 @@ When
 Then
  [ NotAllowed ]
 
- #3
+ #6
 Given
  [ GameCreated, GameStarted ]
 When
@@ -95,8 +56,7 @@ When
 Then
  [ FullGameJoinAttempted ]
 
-
- #3.1
+ #7
 Given
  [ GameCreated ]
 When
@@ -104,8 +64,7 @@ When
 Then
  [ GameJoined ]
 
-
-#4
+#8
 Given
  [ X Won ]
 When
@@ -113,7 +72,7 @@ When
 Then
  [ NotAllowed ]
 
-#5
+#9
 Given
  [ Placed(0,0,X), Placed(1,1,X) ]
 When
@@ -121,7 +80,7 @@ When
 Then
  [ GameWon X]
 
-#6
+#10
 Given
  [ Placed(0,0,Y), Placed(1,1,Y) ]
 When
@@ -129,7 +88,7 @@ When
 Then
  [ GameWon Y]
 
- #7
+ #10
 Given
  [ GameCreated ]
 When
@@ -137,18 +96,15 @@ When
 Then
  [ NotAllowed ]
 
-#8
+#11
 Given
  [ GameCreated, Placed(0,2,X), Placed(1,2,X) ]
 When
  Place(2,2,X)
 Then
  [ GameWon ] 
-
-    Should not emit game draw if won on last move
-    Should emit game draw when neither wins
     
-#9
+#12
 Given
  [ GameCreated, 
  Placed(0,0,X), Placed(0,1,Y), Placed(0,2,X), 
@@ -159,7 +115,7 @@ When
 Then
  [ Tie, GameEnded ]
 
-#9.1
+#12
 Given
  [ GameCreated, 
  Placed(0,0,X), Placed(0,1,Y), Placed(0,2,X), 
@@ -170,10 +126,38 @@ When
 Then
  [ GameWon ]
 
-#10
+#13
 Given
  []
 When
  CreateGame
 Then
  [ GameCreated ]
+
+
+## Store events - not state
+ - Atburðir sem gerast í kerfinu
+ - Event Concepts
+  - hlutir sem gerast í þátíð
+  - t.d. PlayerPlacedMove, GameCreated, GameJoined
+
+ - Triggeruð af Commands
+  - Commands => hlutir sem ég vil að gerist
+  - þ.e. PlaceMove, CreateGame, JoinGame
+  - oftast eitt command á móti hverjum event
+
+- Aggregate (samansafn)
+ - einn tictactoe leikur
+- Command handler (sem tekur við command)
+ - kann að túlka command, hlaða upp aggregate og setja saman, láta aggregate fá command
+- Event Store 
+ - Geymir eventa sem hafa orðið til í kerfinu
+ - gagnagrunnar (postgres)
+ - tvær töflur (commands store, event store)
+- app context
+ - uppúr "domain driven design"
+ - hluturinn sem "límir" allt saman
+
+- Projections
+ - ef event fjöldinn hefur efri mörk þarf ekki
+ - til að gera event hröð
