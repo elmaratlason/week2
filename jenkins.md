@@ -35,11 +35,11 @@ __Inside Jenkins__
  - Generated public/private keys on Jenkins and public key added to github to allow jenkins to connect to repo
  - enable security (/var/lib/jenkins/config.xml)
 - Add Plugins:
- - GitHub Authentication
- - GitHub Integration
- - Gravatar
- - NodeJS
- - Pipeline
+  - GitHub Authentication
+  - GitHub Integration
+  - Gravatar
+  - NodeJS
+  - Pipeline
 
 ### Jenkinsfile
 The file that binds all the steps in the pipeline.
