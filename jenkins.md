@@ -69,11 +69,11 @@ This needs to be done manually, which can be done by connecting to Jenkins ec2 i
 [Version info](http://ec2-54-76-136-201.eu-west-1.compute.amazonaws.com:8080/version.html)
 
 - [dockerbuild.sh]()
- - builds docker image after application is built and pushes it to dockerhub
+  - builds docker image after application is built and pushes it to dockerhub
 - [docker-compose.yml](provisioning/docker-compose.yml)
- - add postgres port 5432:5432
+  - add postgres port 5432:5432
 - [server/database.json](database.json)
- - change from localhost -> postgres
+  - change from localhost -> postgres
 
 # Author
 [Elmar Atlason](mailto:elmar.atlason@gmail.com)
