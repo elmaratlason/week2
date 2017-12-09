@@ -1,6 +1,17 @@
 # Week 2
 [![Build Status](http://ec2-35-177-96-250.eu-west-2.compute.amazonaws.com:8080/job/hgop/badge/icon)](http://ec2-35-177-96-250.eu-west-2.compute.amazonaws.com:8080/job/hgop)
 
+
+md with view protected[![Build Status](http://ec2-35-177-96-250.eu-west-2.compute.amazonaws.com:8080/job/hgop/badge/icon)](http://ec2-35-177-96-250.eu-west-2.compute.amazonaws.com:8080/job/hgop/)
+
+md with view unprotected [![Build Status](http://ec2-35-177-96-250.eu-west-2.compute.amazonaws.com:8080/buildStatus/icon?job=hgop)](http://ec2-35-177-96-250.eu-west-2.compute.amazonaws.com:8080/job/hgop/)
+
+without view
+
+protected[![Build Status](http://ec2-35-177-96-250.eu-west-2.compute.amazonaws.com:8080/job/hgop/badge/icon)](http://ec2-35-177-96-250.eu-west-2.compute.amazonaws.com:8080/job/hgop)
+Unprotected
+[![Build Status](http://ec2-35-177-96-250.eu-west-2.compute.amazonaws.com:8080/buildStatus/icon?job=hgop)](http://ec2-35-177-96-250.eu-west-2.compute.amazonaws.com:8080/job/hgop)
+
 ## [Jenkins](http://ec2-35-177-96-250.eu-west-2.compute.amazonaws.com:8080)
 ## [The Game](http://ec2-54-76-136-201.eu-west-1.compute.amazonaws.com:8080)
 
@@ -52,7 +63,7 @@ __Inside Jenkins__
  - __Test__ - (run unit test on the tictactoe app)
  - __Project Build__ -(package the tictactoe app for deploy)
  - __Docker build__ - (create a docker image with new version of tictactoe)
- - __Deploy__ To AWS - (deploy tictactoe to ec2 instance )
+ - __Deploy To AWS__ - (deploy tictactoe to ec2 instance )
 
 Prior to running those stages, we run: "_checkout scm_" which checks out newest version of the code, using pipeline plugin in jenkins.
 
