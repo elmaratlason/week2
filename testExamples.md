@@ -58,7 +58,7 @@ Then
 Given
   [ GameCreated, GameStarted ]
 When
-  GameJoine
+  GameJoin
 Then
   [ FullGameJoinAttempted ]
 ```
@@ -67,7 +67,7 @@ Then
 Given
   [ GameCreated ]
 When
-  GameJoine
+  GameJoin
 Then
   [ GameJoined ]
 ```
