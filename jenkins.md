@@ -1,16 +1,8 @@
 # Week 2
 
-
-
-[![Jenkins](https://wiki.jenkins.io/download/attachments/2916393/logo-title.png?version=1&modificationDate=1302753947000&api=v2)](http://ec2-35-177-96-250.eu-west-2.compute.amazonaws.com:8080)
-
-
-[![TicTacToe](https://slack-files2.s3-us-west-2.amazonaws.com/avatars/2017-05-27/188949058290_577ab559045c89cc851b_512.png)](http://ec2-54-76-136-201.eu-west-1.compute.amazonaws.com:8080)
-
-
 ## Links
-* [Jenkins](http://ec2-35-177-96-250.eu-west-2.compute.amazonaws.com:8080)
-* [The Game](http://ec2-54-76-136-201.eu-west-1.compute.amazonaws.com:8080)
+* __[Jenkins](http://ec2-35-177-96-250.eu-west-2.compute.amazonaws.com:8080)__
+* __[TicTacToe](http://ec2-54-76-136-201.eu-west-1.compute.amazonaws.com:8080)__
 
 ### Scripts
 #### Start by provisioning an ec2 instance.
