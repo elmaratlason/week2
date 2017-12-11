@@ -12,7 +12,7 @@ node {
         {
             sh 'yarn install || npm install'
         }
-
+    }
 
     stage('Test') {
         echo 'Testing..'
