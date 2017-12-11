@@ -12,7 +12,7 @@ node {
     }
     stage('Test') {
         echo 'Testing..'
-        sh 'npm run test'
+        sh 'npm run test:nowatch'
     }
 /*
     stage('Load-test') {
