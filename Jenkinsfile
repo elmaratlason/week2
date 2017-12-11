@@ -14,11 +14,13 @@ node {
         echo 'Testing..'
         sh 'npm run test'
     }
+/*
     stage('Load-test') {
         echo 'Testing..'
         sh 'npm run-script loadtest:nowatch'
     }
-    stage('Project Build') {
+    */
+   stage('Project Build') {
         echo 'Building Project'
         sh 'npm run-script build'
     }
