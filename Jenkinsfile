@@ -1,5 +1,9 @@
 node {
     checkout scm
+    stage('Clean') {
+        // Clean files from last build.
+        sh 'git clean -dfxq'
+    }
     stage('Build') {
         echo 'Building in stage BUILD..'
         /*sh 'npm install'
