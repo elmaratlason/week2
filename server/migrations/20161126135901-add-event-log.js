@@ -13,12 +13,15 @@ exports.setup = function(options, seedLink) {
   type = dbm.dataType;
   seed = seedLink;
 };
-
+/*
+ * column aggregate_id missing, should it be string? (like id)
+*/
 exports.up = function(db,callback) {
   db.createTable('eventlog', {
     timestamp:{ type:'datetime'},
     id: { type: 'string', primaryKey: true },
-    json: 'string'
+    json: 'string',
+    aggregate_id: 'string'
   }, callback);};
 
 exports.down = function(db) {
